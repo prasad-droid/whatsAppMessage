@@ -24,6 +24,9 @@
         position: relative;
         margin: 20px 0 40px;
         width: 190px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
 
       .form-control input {
@@ -65,11 +68,28 @@
         text-shadow: 2px 2px 5px rgb(59, 190, 234);
         transform: translateY(-30px);
       }
+      button {
+        cursor: pointer;
+        font-weight: 700;
+        font-family: Helvetica,"sans-serif";
+        transition: all .2s;
+        padding: 10px;
+        border-radius: 10px;
+        background: #cfef00;
+        border: 1px solid transparent;
+        display: flex;
+        align-items: center;
+        font-size: 15px;
+      }
+      
+      
+      
+      
     </style>
   </head>
   <body>
     <div class="form-control">
-      <input type="value" required="" />
+      <input type="value" required="" id="input"/>
       <label>
         <span style="transition-delay: 0ms">N</span>
         <span style="transition-delay: 50ms">u</span>
@@ -80,6 +100,20 @@
         <span style="transition-delay: 300ms">s</span>
         <span style="transition-delay: 350ms"></span>
       </label>
+      <button id="sendBtn">
+        send
+      </button>
     </div>
+
+    <script>
+
+      let btn = document.getElementById('sendBtn')
+      let number = document.getElementById('input')
+      btn.addEventListener('click',()=>{
+          
+          window.location.href = `https://wa.me/+91${number.value}`
+      })
+
+    </script>
   </body>
 </html>
